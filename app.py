@@ -20,6 +20,7 @@ def anime():
         return jsonify(animes)  
     if request.method == 'POST':
         data = request.json
+        data['id'] = len(animes) + 1
         animes.append(data)
         return f"{data['name']} has been added to the anime list!"
 
@@ -32,4 +33,4 @@ def handle_server_error(err):
     return jsonify({"message": f"{err}. It's not you, it's us. Press F to pay respects"}), 500
 
 if __name__ == '__main__':
-        app.run(debug=True)
+    app.run(debug=True)
