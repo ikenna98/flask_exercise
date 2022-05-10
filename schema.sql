@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS animes;
+
+CREATE TABLE animes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    year INT NOT NULL
+);
