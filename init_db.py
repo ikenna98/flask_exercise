@@ -20,5 +20,7 @@ cur.execute("INSERT INTO animes (name, year) VALUES (?, ?)",
             ('Blue Period', 2021)
             )
 
+cur.execute("DELETE FROM animes WHERE name='Test'")
+
 connection.commit()
 connection.close()
