@@ -21,15 +21,15 @@ def anime():
     if request.method == 'POST':
         data = request.json
         animes.append(data)
-        return f"{data['name']} is my favourite anime!"
+        return f"{data['name']} has been added to the anime list!"
 
 @app.errorhandler(exceptions.NotFound)
 def handle__404(err):
-    return jsonify({"message": f"Opps... {err}"}), 404
+    return jsonify({"message": f"Oops... {err}"}), 404
 
 @app.errorhandler(exceptions.InternalServerError)
 def handle_server_error(err):
-    return jsonify({"message": f"{err}. I'ts not oyu, it's us. Press F to pay espects"}), 500
+    return jsonify({"message": f"{err}. It's not you, it's us. Press F to pay respects"}), 500
 
 if __name__ == '__main__':
         app.run(debug=True)
